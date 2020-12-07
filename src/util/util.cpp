@@ -31,7 +31,7 @@ std::string coord_to_string(const Coord &coord) {
 
 Coord string_to_coord(const char *coord) noexcept(false) {
     if (!std::regex_match(coord, std::regex(COORD_REGEX, std::regex_constants::icase)))
-        throw std::exception("Invalid coordinate syntax.");
+        throw invalid_coord_syntax();
 
     std::string y = std::strlen(coord) == 3 ?
                     std::string(coord + 1, coord + 3) : std::string(coord + 1, coord + 2);
