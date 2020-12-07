@@ -28,7 +28,7 @@ void BattleRaft::loop() {
                          coord_to_string(Coord(rand(0, 9), rand(0, 9)));
         clear_screen();
         if (in == "exit") {
-            std::cout << "Thanks for playing the game";
+            std::cout << "Thanks for playing the game" << std::endl;
             std::exit(0);
         }
 
