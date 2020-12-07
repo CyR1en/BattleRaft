@@ -93,7 +93,7 @@ inline bool operator==(const Point<T> &lhs, const Point<T> &rhs) {
 typedef Point<> Coord;
 
 #define ALPHABET_REGEX "[A-Ja-j]"
-#define COORD_REGEX "([A-Z])(10|[0-9])"
+#define COORD_REGEX "([A-J])(10|[0-9])"
 
 // Utility function that converts chars to ordinal number
 int char_to_ordinal(char ch);
