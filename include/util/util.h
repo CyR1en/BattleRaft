@@ -7,6 +7,18 @@
 #include <vector>
 #include <map>
 
+struct invalid_enum_key : public std::exception {
+    const char *what() const noexcept override {
+        return "Enum key was invalid";
+    }
+};
+
+struct invalid_coord_syntax : public std::exception {
+    const char *what() const noexcept override {
+        return "The coordinate syntax was invalid";
+    }
+};
+
 // A Uniform Distribution template to aid #rand() with templating.
 // Defines uniform_distribution in compile time.
 template<class T>
@@ -38,7 +50,8 @@ public:
     T parse_enum(const std::string &value) {
         typename std::map<std::string, T>::const_iterator iValue = enumMap.find(value);
         if (iValue == enumMap.end())
-            throw std::exception("Invalid key");
+            throw invalid_enum_key();
+
         return iValue->second;
     }
 };
