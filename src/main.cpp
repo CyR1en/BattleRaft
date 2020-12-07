@@ -13,23 +13,5 @@ int main(int argc, const char *argv[]) {
     std::cout << "CSV Path : " << argv[1] << std::endl;
     BattleRaft battleRaft(argv[1]);
     battleRaft.start();
-    /**
-   ComputerBoard c_board;
-   BoardSetter::setCompBoard(c_board);
-   std::cout << c_board << std::endl;
-
-   Board board;
-   CSVReader reader(argv[1]);
-   reader.parse();
-   BoardSetter::setPlayerBoard(board, reader);
-   std::cout << board << std::endl;
-     **/
-    /**
-   std::string s = "Carrier";
-   Raft r(s, 5, H, "B2");
-   r.getParts();
-   for(Coord p: r.getParts())
-       std::cout << coord_to_string(p) << " ";
-       **/
     return 0;
 }
