@@ -61,7 +61,7 @@ void BattleRaft::printInstruction() {
     std::cout << "=================== Welcome to BattleRafts ====================" << std::endl;
     std::cout << "| Your goal is to hit all of the computer's raft on its board.|" << std::endl;
     std::cout << "| You and the computer will take turns and whoever wipes all  |" << std::endl;
-    std::cout << "| of the raft on the opponent's board wins.                    |" << std::endl;
+    std::cout << "| of the raft on the opponent's board wins.                   |" << std::endl;
     std::cout << "|                                                             |" << std::endl;
     std::cout << "| The board is a 10 x 10 grid, and is coordinated with the    |" << std::endl;
     std::cout << "| letters [A-J] on the x-axis (left-to-right) and [1-10] on   |" << std::endl;
