@@ -94,7 +94,7 @@ void BattleRaft::printInstruction() {
     std::cout << "| On the computer's board preview, missed targets will be     |" << std::endl;
     std::cout << "| marked with (0) and hit targets with (x).                   |" << std::endl;
     std::cout << "|                                                             |" << std::endl;
-    std::cout << "| When a segment of the raft gets hit, the whole rafts gets   |" << std::endl;
+    std::cout << "| When a segment of the raft gets hit, the whole raft  gets   |" << std::endl;
     std::cout << "| destroyed immediately.                                      |" << std::endl;
     std::cout << "===============================================================" << std::endl;
 }
