@@ -85,8 +85,8 @@ void Board::placeRaft(const Raft &raft, bool print_err = true) {
 bool Board::isRaftOutBound(const Raft &raft) {
     bool is_raft_h = raft.getOrientation() == H;
     Coord coord = raft.getLocation();
-    return is_raft_h ? (coord.getX() + raft.getLength()) > getWidth() - 1 :
-           (coord.getY() + raft.getLength()) > getLength() - 1;;
+    return is_raft_h ? (coord.getX() + raft.getLength()) > getWidth() :
+           (coord.getY() + raft.getLength()) > getLength();
 }
 
 //accessor
