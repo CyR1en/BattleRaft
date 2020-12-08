@@ -95,7 +95,7 @@ std::vector<std::vector<std::string>> Board::renderBoard() const {
             Coord coord(i, j);
             ss << (contains(getHits(), coord) ? "x" :
                    (contains(getMissed(), coord) ? "0" :
-                    (at(j).at(i) ? "1" : "~")));
+                    (at(j).at(i) ? "1" : "-")));
             rendered.at(j).at(i) = ss.str();
         }
     }
@@ -149,7 +149,7 @@ std::vector<std::vector<std::string>> ComputerBoard::renderBoard() const {
             std::stringstream ss;
             Coord coord(col, row);
             ss << (contains(getHits(), coord) ? "x" :
-                   (contains(getMissed(), coord) ? "0" : "~"));
+                   (contains(getMissed(), coord) ? "0" : "-"));
             rendered.at(row).at(col) = ss.str();
         }
     }

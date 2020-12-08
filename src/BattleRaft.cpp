@@ -69,7 +69,7 @@ void BattleRaft::printInstruction() {
     std::cout << "| The computer's board will be display above your board       |" << std::endl;
     std::cout << "| without showing the actual the position of each rafts.      |" << std::endl;
     std::cout << "|                                                             |" << std::endl;
-    std::cout << "| On your board, (~) indicates water, and (1) is a segment of |" << std::endl;
+    std::cout << "| On your board, (-) indicates water, and (1) is a segment of |" << std::endl;
     std::cout << "| your rafts.                                                 |" << std::endl;
     std::cout << "|                                                             |" << std::endl;
     std::cout << "| Send an attack by entering a valid coordinate (i.e A1, B10).|" << std::endl;
