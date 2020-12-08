@@ -1,14 +1,16 @@
 #include "Raft.h"
 
+//constructor for EnumParser
 template<>
 EnumParser<Orientation>::EnumParser() {
     enumMap["H"] = H;
     enumMap["V"] = V;
 }
 
+//Constructor for Raft
 Raft::Raft(std::string &t, int l, Orientation o, int x, int y) : Bitset(l, true), type(t), length(l),
                                                                  orientation(o), head(x, y) {}
-
+//Constructor for Raft
 Raft::Raft(std::string &t, int l, Orientation o, const char *coord) : Bitset(l, true), type(t), length(l),
                                                                       orientation(o), head(11, 11) {
     try {
@@ -18,26 +20,38 @@ Raft::Raft(std::string &t, int l, Orientation o, const char *coord) : Bitset(l, 
     }
 }
 
+//accessor
 int Raft::getLength() const {
     return length;
 }
 
+//accessor
 std::string Raft::getType() const {
     return type;
 }
 
+//accessor
 Orientation Raft::getOrientation() const {
     return orientation;
 }
 
+//accessor
 Coord Raft::getLocation() const {
     return head;
 }
 
+//accessor
 void Raft::setLocation(const Coord &l) {
     head = l;
 }
 
+/**
+ * Get each parts of the raft.
+ *
+ * Based on the location of the head and the length we can get the coordinate of each parts.
+ *
+ * @return parts of the Raft.
+ */
 std::vector<Coord> Raft::getParts() const {
     std::vector<Coord> parts;
     parts.push_back(head);

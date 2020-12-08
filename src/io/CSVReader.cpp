@@ -2,8 +2,20 @@
 #include <fstream>
 #include "util.h"
 
+/**
+ * CSVReader constructor
+
+ * @param path path to csv file to read.
+ */
 CSVReader::CSVReader(const char *path) : std::vector<std::vector<std::string>>(), path(path) {}
 
+/**
+ * Function that parse csv content.
+ *
+ * This opens the file and go through it line by line.
+ * Since each line is formatted like "Element1,Element2,Element3", I just used the
+ * tokenize function in utils to split the line using the delimiter ",".
+ */
 void CSVReader::parse() {
     std::ifstream csv_file(path);
 

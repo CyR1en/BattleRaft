@@ -1,6 +1,11 @@
 #include "BattleRaft.h"
 #include "input.h"
 
+/**
+ * BattleRaft constructor
+ *
+ * @param path path to csv file.
+ */
 BattleRaft::BattleRaft(const char *path) : playerBoard(), computerBoard(), isRunning(false) {
     CSVReader reader(path);
     reader.parse();
@@ -8,6 +13,9 @@ BattleRaft::BattleRaft(const char *path) : playerBoard(), computerBoard(), isRun
     BoardSetter::setCompBoard(computerBoard);
 }
 
+/**
+ * Function to start the game after construction.
+ */
 void BattleRaft::start() {
     printInstruction();
     io::pause("Press enter to continue . . .");
@@ -16,6 +24,14 @@ void BattleRaft::start() {
     loop();
 }
 
+/**
+ * Game loop
+ *
+ * Loop starts with rendering the both boards and the ask for input.
+ * Since the input prompt for both the computer and player pauses the loop, i've decided to clear the screen after it
+ * so I could actually show what happened after the input (Instead of just seeing the board when I clear the board
+ * at the end of the loop).
+ */
 void BattleRaft::loop() {
     bool isPlayerTurn = true;
     while (isRunning) {
@@ -56,6 +72,7 @@ void BattleRaft::loop() {
     }
 }
 
+// A cute little intro/instruction to print when the game starts. :)
 void BattleRaft::printInstruction() {
     std::cout << "=================== Welcome to BattleRafts ====================" << std::endl;
     std::cout << "| Your goal is to hit all of the computer's raft on its board.|" << std::endl;
