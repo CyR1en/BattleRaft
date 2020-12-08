@@ -5,24 +5,6 @@
 using namespace std;
 
 /**
- * Generate a random number from a to b.
- *
- * This function isn't really practical in large application because it uses Mersenne Twister engine
- * which uses 5kb of memory for each creation. But even if that's the case, it's still more
- * "random" the rand(). So I figured it's good enough for this assignment.
- *
- * @param a Start range.
- * @param b End range.
- * @return Random number from a to b.
- */
-int get_random(int a, int b) {
-    random_device rd; // seeding object.
-    mt19937 engine(rd()); // engine and seed it with rd;
-    uniform_int_distribution<> rangeDist(a, b); // [a, b] range distribution
-    return rangeDist(engine); // get random integer.
-}
-
-/**
  * Two argument constructor for BitGrid.
  *
  * This constructor just calls the constructor of deque and initializes the length
@@ -44,8 +26,8 @@ BitGrid::BitGrid(int _length, int _width) : std::vector<Bitset>(_length, Bitset(
  * @return a Point of a non-1 on the grid.
  */
 Coord &BitGrid::getRandNon1() {
-    auto l = get_random(0, length - 1);
-    auto w = get_random(0, width - 1);
+    auto l = rand(0, length - 1);
+    auto w = rand(0, width - 1);
     if (at(l).at(w) != 1)
         return *new Coord(l, w);
     else

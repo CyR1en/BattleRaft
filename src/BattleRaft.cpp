@@ -10,8 +10,7 @@ BattleRaft::BattleRaft(const char *path) : playerBoard(), computerBoard(), isRun
 
 void BattleRaft::start() {
     printInstruction();
-    std::cout << "Press enter to continue . . ." << "\n";
-    std::cin.get();
+    io::pause("Press enter to continue . . .");
     clear_screen();
     isRunning = true;
     loop();
@@ -21,11 +20,11 @@ void BattleRaft::loop() {
     bool isPlayerTurn = true;
     while (isRunning) {
         std::cout << "Computer's Board:" << std::endl << computerBoard << std::endl;
-        std::cout << "Your Board:" << std::endl <<playerBoard << std::endl;
+        std::cout << "Your Board:" << std::endl << playerBoard << std::endl;
 
         std::cout << "It's " << (isPlayerTurn ? "your turn!" : "the computer's turn") << std::endl;
-        std::string in = isPlayerTurn ? io::ask_coord_input() :
-                         coord_to_string(Coord(rand(0, 9), rand(0, 9)));
+        std::string in = isPlayerTurn ? io::ask_coord_input(computerBoard) :
+                         io::generate_input_for_bot(playerBoard);
         clear_screen();
         if (in == "exit") {
             std::cout << "Thanks for playing the game" << std::endl;
@@ -82,4 +81,3 @@ void BattleRaft::printInstruction() {
     std::cout << "| destroyed immediately.                                      |" << std::endl;
     std::cout << "===============================================================" << std::endl;
 }
-

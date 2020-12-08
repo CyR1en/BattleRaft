@@ -7,9 +7,6 @@
 #include "util.h"
 #include "Bitset.h"
 
-// Helper method to help me get a more "random" number.
-int get_random(int a, int b);
-
 /**
  * Implementation of a BitGrid for Programming Assignment 2.
  *

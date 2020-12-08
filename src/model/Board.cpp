@@ -116,6 +116,15 @@ std::ostream &operator<<(std::ostream &out, const Board &b) {
     return out;
 }
 
+std::vector<Coord> Board::getUsedCoords() {
+    std::vector<Coord> used;
+    for (Coord &c : missed)
+        used.push_back(c);
+    for (Raft &r : destroyed)
+        for (Coord &r_p : r.getParts())
+            used.push_back(r_p);
+    return used;
+}
 
 
 std::ostream &operator<<(std::ostream &out, const ComputerBoard &b) {

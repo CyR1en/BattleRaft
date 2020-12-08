@@ -13,7 +13,7 @@ private:
     std::vector<Raft> destroyed;
 
 protected:
-    std::vector<std::vector<std::string>> renderDestroyed(std::vector<std::vector<std::string>> &p_rendered) const;
+    vector<std::vector<std::string>> renderDestroyed(std::vector<std::vector<std::string>> &p_rendered) const;
 
 public:
     Board();
@@ -24,13 +24,15 @@ public:
 
     bool isRaftOutBound(const Raft &raft);
 
-    const vector <Coord> &getHits() const;
+    const std::vector<Coord> &getHits() const;
 
-    const vector <Coord> &getMissed() const;
+    const std::vector<Coord> &getMissed() const;
 
-    const vector <Raft> &getRafts() const;
+    const std::vector<Raft> &getRafts() const;
 
-    const vector <Raft> &getDestroyed() const;
+    const std::vector<Raft> &getDestroyed() const;
+
+    std::vector<Coord> getUsedCoords();
 
     virtual std::vector<std::vector<std::string>> renderBoard() const;
 

@@ -71,7 +71,9 @@ private:
     T y_;
 public:
     // Constructor
-    Point(T x, T y) : x_{x}, y_{y} {}
+    Point() : x_(0), y_(0) {}
+
+    Point(T x, T y) : x_(x), y_(y) {}
 
     // Immutable accessor.
     T getX() const {
