@@ -20,7 +20,7 @@ void CSVReader::parse() {
     std::ifstream csv_file(path);
 
     if (!csv_file.is_open()) {
-        std::cout << "The csv path: [" << path << "] could not be opened";
+        std::cout << "The csv path: [" << path << "] could not be opened" << std::endl;
         std::exit(0);
     }
 
