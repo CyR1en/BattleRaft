@@ -28,7 +28,7 @@ std::string io::ask_coord_input(ComputerBoard &p_board) {
             else
                 std::cout << out << " was used before or a part of a destroyed raft." << std::endl;
         } else
-            std::cout << "That input is not valid ([A-J][0-10])" << std::endl;
+            std::cout << "That input is not valid ([A-J][1-10])" << std::endl;
     }
 }
 
