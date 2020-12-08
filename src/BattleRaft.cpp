@@ -96,5 +96,7 @@ void BattleRaft::printInstruction() {
     std::cout << "|                                                             |" << std::endl;
     std::cout << "| When a segment of the raft gets hit, the whole raft  gets   |" << std::endl;
     std::cout << "| destroyed immediately.                                      |" << std::endl;
+    std::cout << "|                                                             |" << std::endl;
+    std::cout << "| To exit the game, just type \"exit\" during your turn.      |" << std::endl;
     std::cout << "===============================================================" << std::endl;
 }
